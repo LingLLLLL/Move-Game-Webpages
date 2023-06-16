@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign up</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style_signUp.css" />
+
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+  <header>
+		<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#">TEAM 5</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+					aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarCollapse">
+					<ul class="navbar-nav me-auto mb-2 mb-md-0">
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="#" onclick="homePage()">Home</a>
+						</li>
+						<!-- <li class="nav-item">
+					<a class="nav-link" href="#">Link</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link disabled">Disabled</a>
+				  </li> -->
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
+								aria-expanded="false">Movie</a>
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="#" onclick="chargerZoneItem('Action')">Action</a></li>
+								<li><a class="dropdown-item" href="#" onclick="chargerZoneItem('Science-Fiction')">Science-Fiction</a></li>
+								
+							</ul>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
+								aria-expanded="false">Games</a>
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="#" onclick="chargerZoneItem('Comedie')">Comedie</a></li>
+								<li><a class="dropdown-item" href="#" onclick="chargerZoneItem('Drame')">Drame</a></li>
+							</ul>
+						</li>
+					</ul>
+
+					<form class="d-flex" id="iconPanier">
+						<a href="#"><img src="images/cart-white.svg" alt="" height="25px"
+								onclick="checkout()"></a>
+						<div id="idItem" class="text-warning txt24">0</div>
+					</form>
+					<!-- <form class="d-flex" role="search">
+				  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+				  <button class="btn btn-outline-success" type="submit">Search</button>
+				</form> -->
+				</div>
+			</div>
+		</nav>
+	</header>
+  <!-- <main id="main" class="site-main main" style="margin: auto;">
+      <section class="section">
+        <div class="container">
+          <div class="row">
+            <div class="container container--xs">
+              <div class="woocommerce">
+                <div id="signup_div_wrapper">
+                  <h1 class="mb-1 text-center">Sign up</h1>
+                  <form method="post" class="register">
+                    <p class="woocommerce-FormRow woocommerce-FormRow--first form-row form-row-first">
+                      <label for="reg_sr_firstname">First Name
+                        <span class="required">*</span>
+                      </label>
+                      <input type="text" class="woocommerce-Input woocommerce-Input--text input-text form-control" name="sr_firstname" id="reg_sr_firstname" value required>
+                      <div class="invalid-feedback">This field is required</div>
+                    </p>
+                    <p class="woocommerce-FormRow woocommerce-FormRow--last form-row form-row-last">
+                      <label for="reg_sr_lastname">
+                        Last Name
+                        <span class="required">*</span>
+                      </label>
+                      <input type="text" class="woocommerce-Input woocommerce-Input--text input-text form-control" name="sr_lastname" id="reg_sr_lastname" value required>
+                      <div class="invalid-feedback">This field is required</div>
+                    </p>
+                    <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                      <label for="reg_email">"Email address"
+                        <span class="required">*</span>
+                      </label>
+                      <input type="email" class="woocommerce-Input woocommerce-Input--text input-text form-control" name="email" id="reg_email" value required>
+                      <div class="invalid-feedback">This field is required</div>
+                    </p>
+                    <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                      <label for="reg_password">
+                        "Password"
+                        <span class="required">*</span>
+                      </label>
+                      <input type="password" class="woocommerce-Input woocommerce-Input--text input-text form-control" name="password" id="reg_password" value required>
+                      <div class="invalid-feedback">This field is required</div>
+                    </p>
+                    <div style="left: -999em; position: absolute;">
+                      <label for="trap">Anti-spam</label>
+                      <input type="text" name="email_2" id="trap" tabindex="-1" autocomplete="off">
+                    </div>
+                    <p class="form-row form-row-wide mailchimp-newsletter">
+                      <input class="woocommerce-form__input woocommerce-form__input-checkbox input-checkbox" id="mailchimp_woocommerce_newsletter" type="checkbox" name="mailchimp_woocommerce_newsletter" value="1" checked="checked">
+                      <label for="mailchimp_woocommerce_newsletter" class="woocommerce-form__label woocommerce-form__label-for-checkbox inline">
+                        <span>Subscribe for Sales & New Themes</span>
+                      </label>
+                      <div class="invalid-feedback">This field is required</div>
+                    </p>
+                    <div class="clear"></div>
+                    <div class="woocommerce-privacy-policy-text"></div>
+                    <p class="woocomerce-FormRow form-row">
+                      <input type="hidden" id="woocommerce-register-nonce" name="woocommerce-register-nonce" value="4efc66eb70">
+                      <input type="hidden" name="_wp_http_referer" value="/my-account/" >
+                      <input type="submit" class="btn btn-brand btn-block btn-lg mb-4 mt-3" style="margin:0;" name="register" value="Sign Up">
+                      <div class="invalid-feedback">This field is required</div>
+                    </p>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main> -->
+
+  <div class="container" style="margin: 100px;">
+    <div class="row" >
+      <div class="col-md-5 mx-auto">
+        <div id="first" >
+          <div class="myform form ">
+            <div class="logo mb-3">
+              <div class="col-md-12 text-center">
+                <h1>Login</h1>
+              </div>
+            </div>
+            <form action="" method="post" name="login">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp"
+                  placeholder="name@example.com">
+              </div>
+              <div class="form-group" >
+                <label for="exampleInputEmail1">Password</label>
+                <input type="password" name="password" id="password" class="form-control" aria-describedby="emailHelp"
+                  placeholder="Enter Password">
+              </div>
+              <div class="checkbox mb-3 m-auto text-center">
+                <label>
+                  <input type="checkbox" value="remember-me" /> Remember me
+                </label>
+              </div>
+              <div class="form-group">
+                <p class="text-center">By signing up you accept our <a href="#">Terms Of Use</a></p>
+              </div>
+              <div class="col-md-12 text-center ">
+                <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Login</button>
+              </div>
+              <div class="col-md-12 ">
+                <div class="login-or">
+                  <hr class="hr-or">
+                  <span class="span-or" style="margin: auto;">or</span>
+                </div>
+              </div>
+              <div class="col-md-12 mb-3">
+                <p class="text-center">
+                  <a href="javascript:void();" class="google btn mybtn"><i class="fa fa-google-plus">
+                    </i> Signup using Google
+                  </a>
+                </p>
+              </div>
+              <div class="form-group">
+                <p class="text-center">Don't have account? <a href="#" id="signup">Sign up here</a></p>
+              </div>
+            </form>
+
+          </div>
+        </div>
+        <div id="second">
+          <div class="myform form ">
+            <div class="logo mb-3">
+              <div class="col-md-12 text-center">
+                <h1>Signup</h1>
+              </div>
+            </div>
+            <form action="#" name="registration">
+              <div class="form-group">
+                <label for="exampleInputEmail1">First Name</label>
+                <input type="text" name="firstname" class="form-control" id="firstName" aria-describedby="emailHelp"
+                  placeholder="Enter Firstname">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Last Name</label>
+                <input type="text" name="lastname" class="form-control" id="familyName" aria-describedby="emailHelp"
+                  placeholder="Enter Lastname">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" name="email" class="form-control" id="emailAddress" aria-describedby="emailHelp"
+                  placeholder="Enter email">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Password</label>
+                <input type="password" name="password" id="inputPassword" class="form-control" aria-describedby="emailHelp"
+                  placeholder="Enter Password">
+              </div>
+              <div class="col-md-12 text-center mb-3">
+                <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Get Started For Free</button>
+              </div>
+              <div class="col-md-12 ">
+                <div class="form-group">
+                  <p class="text-center"><a href="#" id="signin">Already have an account?</a></p>
+                </div>
+              </div>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+		<div class="container">
+			<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+				<div class="col-md-4 d-flex align-items-center">
+					<a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+						<svg class="bi" width="30" height="24">
+							<use xlink:href="#bootstrap" />
+						</svg>
+					</a>
+					<span class="mb-3 mb-md-0 text-muted">&copy; 2023 Team 5</span>
+				</div>
+
+				<ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+					<li class="ms-3"><a class="text-muted" href="#"><img src="images/twitter.jpg" width="24"
+								height="24">
+							<use xlink:href="#twitter" /></img>
+						</a></li>
+					<li class="ms-3"><a class="text-muted" href="#"><img src="images/instagram-logo-png.png" width="24"
+								height="24">
+							<use xlink:href="#instagram" /></img>
+						</a></li>
+					<li class="ms-3"><a class="text-muted" href="#"><img src="images/facebook-icon.png" width="24"
+								height="24">
+							<use xlink:href="#facebook" /></img>
+						</a></li>
+				</ul>
+			</footer>
+		</div>
+	</footer>
+  <script src="signUp.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>home2</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .hero-image {
+        margin-top: 200px;
+        background-image: url(jx3/jx3_2.jpg);
+        background-color: #cccccc;
+        height: 500px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+      }
+
+      .hero-text {
+        text-align:center;
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: hsl(0, 0%, 100%);
+      }
+    </style>
+  </head>
+
+  <body>
+	<header>
+		<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+			<div class="container-fluid">
+			  <a class="navbar-brand" href="#">TEAM 5</a>
+			  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			  </button>
+			  <div class="collapse navbar-collapse" id="navbarCollapse">
+				<ul class="navbar-nav me-auto mb-2 mb-md-0">
+				  <li class="nav-item">
+					<a class="nav-link active" aria-current="page" href="#">Home</a>
+				  </li>
+				  <!-- <li class="nav-item">
+					<a class="nav-link" href="#">Link</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link disabled">Disabled</a>
+				  </li> -->
+				  <li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Dropdown1</a>
+					<ul class="dropdown-menu">
+					  <li><a class="dropdown-item" href="#">Action</a></li>
+					  <li><a class="dropdown-item" href="#">Another action</a></li>
+					</ul>
+				  </li>
+				  <li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Dropdown2</a>
+					<ul class="dropdown-menu">
+					  <li><a class="dropdown-item" href="#">Action</a></li>
+					  <li><a class="dropdown-item" href="#">Another action</a></li>
+					</ul>
+				  </li>
+				</ul>
+
+				<form class="d-flex" id="iconPanier">
+					<a href="#"><img src="images/cart-white.svg" alt="" height="25px"
+							onclick="afficheFacture(); afficherPage('zonePanier')"></a>
+					<div id="idItem" class="text-blue txt24">0</div>
+				</form>
+				<!-- <form class="d-flex" role="search">
+				  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+				  <button class="btn btn-outline-success" type="submit">Search</button>
+				</form> -->
+			  </div>
+			</div>
+		  </nav>
+	</header>
+
+    <div class="hero-image">
+      <div class="hero-text">
+        <h3 style="font-size: 30px
+		;" >
+          TEAM 5 Co. is a hobby club that specializes in selling books, movies
+          and video games only to its members at prices half the prices
+          available on the market.
+        </h3>
+      </div>
+    </div>
+
+    <footer class="mt-auto">
+		<div class="container">
+			<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+			  <div class="col-md-4 d-flex align-items-center">
+				<a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+				  <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
+				</a>
+				<span class="mb-3 mb-md-0 text-muted">&copy; 2023 Team 5</span>
+			  </div>
+		  
+			  <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+				<li class="ms-3"><a class="text-muted" href="#"><img src="images/twitter.jpg" width="24" height="24"><use xlink:href="#twitter"/></img></a></li>
+				<li class="ms-3"><a class="text-muted" href="#"><img src="images/instagram-logo-png.png" width="24" height="24"><use xlink:href="#instagram"/></img></a></li>
+				<li class="ms-3"><a class="text-muted" href="#"><img src="images/facebook-icon.png" width="24" height="24"><use xlink:href="#facebook"/></img></a></li>
+			  </ul>
+			</footer>
+		  </div>
+	</footer>
+  </body>
+</html>
